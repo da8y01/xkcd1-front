@@ -11,17 +11,8 @@ export class ProfilesService {
     private apiService: ApiService
   ) {}
 
-  get(username: string): Observable<Profile> {
-    return this.apiService.get('/profiles/' + username)
+  get(email: string): Observable<Profile> {
+    return this.apiService.get('/profiles/' + email)
       .pipe(map((data: {profile: Profile}) => data.profile));
   }
-
-  follow(username: string): Observable<Profile> {
-    return this.apiService.post('/profiles/' + username + '/follow');
-  }
-
-  unfollow(username: string): Observable<Profile> {
-    return this.apiService.delete('/profiles/' + username + '/follow');
-  }
-
 }

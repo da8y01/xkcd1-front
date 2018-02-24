@@ -1,0 +1,10 @@
+<div class="article-preview">
+  <app-comic-meta [comic]="comic">
+  </app-comic-meta>
+
+  <a [routerLink]="['/article', comic.num]" class="preview-link">
+    <h1>{{ comic.title }}</h1>
+    <p>{{ comic.news }}</p>
+    <span>Read more...</span>
+  </a>
+</div>

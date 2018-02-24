@@ -13,8 +13,16 @@
           <fieldset [disabled]="isSubmitting">
             <fieldset class="form-group">
               <input
-                formControlName="username"
-                placeholder="Username"
+                formControlName="first_name"
+                placeholder="First name"
+                class="form-control form-control-lg"
+                type="text"
+                *ngIf="authType == 'register'" />
+            </fieldset>
+            <fieldset class="form-group">
+              <input
+                formControlName="last_name"
+                placeholder="Last name"
                 class="form-control form-control-lg"
                 type="text"
                 *ngIf="authType == 'register'" />

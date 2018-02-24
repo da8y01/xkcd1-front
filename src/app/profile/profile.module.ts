@@ -1,7 +1,7 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { ProfileArticlesComponent } from './profile-articles.component';
+import { ProfileComicsComponent } from './profile-comics.component';
 import { ProfileComponent } from './profile.component';
 import { ProfileFavoritesComponent } from './profile-favorites.component';
 import { ProfileResolver } from './profile-resolver.service';
@@ -9,7 +9,7 @@ import { SharedModule } from '../shared';
 
 const profileRouting: ModuleWithProviders = RouterModule.forChild([
   {
-    path: 'profile/:username',
+    path: 'profile/:email',
     component: ProfileComponent,
     resolve: {
       profile: ProfileResolver
@@ -17,7 +17,7 @@ const profileRouting: ModuleWithProviders = RouterModule.forChild([
     children: [
       {
         path: '',
-        component: ProfileArticlesComponent
+        component: ProfileComicsComponent
       },
       {
         path: 'favorites',
@@ -33,7 +33,7 @@ const profileRouting: ModuleWithProviders = RouterModule.forChild([
     SharedModule
   ],
   declarations: [
-    ProfileArticlesComponent,
+    ProfileComicsComponent,
     ProfileComponent,
     ProfileFavoritesComponent
   ],

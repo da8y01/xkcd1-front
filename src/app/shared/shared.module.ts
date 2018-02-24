@@ -4,8 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
-import { ArticleListComponent, ArticleMetaComponent, ArticlePreviewComponent } from './article-helpers';
-import { FavoriteButtonComponent, FollowButtonComponent } from './buttons';
+import { ComicListComponent, ComicMetaComponent, ComicPreviewComponent } from './comic-helpers';
 import { ListErrorsComponent } from './list-errors.component';
 import { ShowAuthedDirective } from './show-authed.directive';
 
@@ -18,21 +17,17 @@ import { ShowAuthedDirective } from './show-authed.directive';
     RouterModule
   ],
   declarations: [
-    ArticleListComponent,
-    ArticleMetaComponent,
-    ArticlePreviewComponent,
-    FavoriteButtonComponent,
-    FollowButtonComponent,
+    ComicListComponent,
+    ComicMetaComponent,
+    ComicPreviewComponent,
     ListErrorsComponent,
     ShowAuthedDirective
   ],
   exports: [
-    ArticleListComponent,
-    ArticleMetaComponent,
-    ArticlePreviewComponent,
+    ComicListComponent,
+    ComicMetaComponent,
+    ComicPreviewComponent,
     CommonModule,
-    FavoriteButtonComponent,
-    FollowButtonComponent,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,

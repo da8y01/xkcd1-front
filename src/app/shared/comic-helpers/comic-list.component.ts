@@ -1,21 +1,21 @@
 import { Component, Input } from '@angular/core';
 
-import { Article, ArticleListConfig } from '../models';
-import { ArticlesService } from '../services';
+import { Comic, ComicListConfig } from '../models';
+import { ComicsService } from '../services';
 
 @Component({
-  selector: 'app-article-list',
-  styleUrls: ['article-list.component.css'],
-  templateUrl: './article-list.component.html'
+  selector: 'app-comic-list',
+  styleUrls: ['comic-list.component.css'],
+  templateUrl: './comic-list.component.html'
 })
-export class ArticleListComponent {
+export class ComicListComponent {
   constructor (
-    private articlesService: ArticlesService
+    private comicsService: ComicsService
   ) {}
 
   @Input() limit: number;
   @Input()
-  set config(config: ArticleListConfig) {
+  set config(config: ComicListConfig) {
     if (config) {
       this.query = config;
       this.currentPage = 1;
@@ -23,8 +23,8 @@ export class ArticleListComponent {
     }
   }
 
-  query: ArticleListConfig;
-  results: Article[];
+  query: ComicListConfig;
+  results: Comic[];
   loading = false;
   currentPage = 1;
   totalPages: Array<number> = [1];
@@ -44,13 +44,13 @@ export class ArticleListComponent {
       this.query.filters.offset =  (this.limit * (this.currentPage - 1));
     }
 
-    this.articlesService.query(this.query)
+    this.comicsService.query(this.query)
     .subscribe(data => {
       this.loading = false;
-      this.results = data.articles;
+      this.results = data.comics;
 
       // Used from http://www.jstips.co/en/create-range-0...n-easily-using-one-line/
-      this.totalPages = Array.from(new Array(Math.ceil(data.articlesCount / this.limit)), (val, index) => index + 1);
+      this.totalPages = Array.from(new Array(Math.ceil(data.comicsCount / this.limit)), (val, index) => index + 1);
     });
   }
 }

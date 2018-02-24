@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve, Router, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 
-import { Article, ArticlesService, UserService } from '../shared';
+import { Comic, ComicsService, UserService } from '../shared';
 import { map, catchError } from 'rxjs/operators';
 
 @Injectable()
-export class EditableArticleResolver implements Resolve<Article> {
+export class EditableComicResolver implements Resolve<Comic> {
   constructor(
-    private articlesService: ArticlesService,
+    private comicsService: ComicsService,
     private router: Router,
     private userService: UserService
   ) { }
@@ -18,12 +18,12 @@ export class EditableArticleResolver implements Resolve<Article> {
     state: RouterStateSnapshot
   ): Observable<any> {
 
-    return this.articlesService.get(route.params['slug'])
+    return this.comicsService.get(route.params['num'])
       .pipe(
         map(
-          article => {
-            if (this.userService.getCurrentUser().username === article.author.username) {
-              return article;
+          comic => {
+            if (this.userService.getCurrentUser().email != (null || undefined)) {
+              return comic;
             } else {
               this.router.navigateByUrl('/');
             }

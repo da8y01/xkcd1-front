@@ -2,15 +2,15 @@
 
   <div class="banner" *showAuthed="false">
     <div class="container">
-      <h1 class="logo-font">conduit</h1>
-      <p>A place to share your <i>Angular 2</i> knowledge.</p>
+      <h1 class="logo-font">XKCD</h1>
+      <p>The web-comics site.</p>
     </div>
   </div>
 
   <div class="container page">
     <div class="row">
 
-      <div class="col-md-9">
+      <div class="col-md-12">
         <div class="feed-toggle">
           <ul class="nav nav-pills outline-active">
             <li class="nav-item">
@@ -35,29 +35,7 @@
           </ul>
         </div>
 
-        <app-article-list [limit]="10" [config]="listConfig"></app-article-list>
-      </div>
-
-      <div class="col-md-3">
-        <div class="sidebar">
-          <p>Popular Tags</p>
-
-          <div class="tag-list">
-            <a *ngFor="let tag of tags"
-               (click)="setListTo('all', {tag: tag})"
-               class="tag-default tag-pill">
-               {{ tag }}
-            </a>
-          </div>
-
-          <div [hidden]="tagsLoaded">
-            Loading tags...
-          </div>
-
-          <div [hidden]="!tagsLoaded || tags.length > 0">
-            No tags are here... yet.
-          </div>
-        </div>
+        <app-comic-list [limit]="10" [config]="listConfig"></app-comic-list>
       </div>
 
     </div>
