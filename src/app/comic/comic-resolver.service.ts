@@ -8,7 +8,7 @@ import { catchError } from 'rxjs/operators';
 @Injectable()
 export class ComicResolver implements Resolve<Comic> {
   constructor(
-    private articlesService: ComicsService,
+    private comicsService: ComicsService,
     private router: Router,
     private userService: UserService
   ) {}
@@ -18,7 +18,7 @@ export class ComicResolver implements Resolve<Comic> {
     state: RouterStateSnapshot
   ): Observable<any> {
 
-    return this.articlesService.get(route.params['slug'])
+    return this.comicsService.get(route.params['num'])
       .pipe(catchError((err) => this.router.navigateByUrl('/')));
   }
 }

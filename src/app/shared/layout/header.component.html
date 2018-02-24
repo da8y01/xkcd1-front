@@ -48,7 +48,7 @@
         <a class="nav-link"
           routerLink="/editor"
           routerLinkActive="active">
-          <i class="ion-compose"></i>&nbsp;New Article
+          <i class="ion-compose"></i>&nbsp;New Comic
         </a>
       </li>
 
@@ -62,10 +62,9 @@
 
       <li class="nav-item">
         <a class="nav-link"
-          [routerLink]="['/profile', currentUser.username]"
+          [routerLink]="['/profile', currentUser.email]"
           routerLinkActive="active">
-          <img [src]="currentUser.image" *ngIf="currentUser.image" class="user-pic" />
-          {{ currentUser.username }}
+          {{ currentUser.first_name }}
         </a>
       </li>
 

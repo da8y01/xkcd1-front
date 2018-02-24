@@ -5,49 +5,88 @@
 
         <app-list-errors [errors]="errors"></app-list-errors>
 
-        <form [formGroup]="articleForm">
+        <form [formGroup]="comicForm">
           <fieldset [disabled]="isSubmitting">
 
             <fieldset class="form-group">
-              <input class="form-control form-control-lg"
+              <input class="form-control"
+                formControlName="month"
+                type="text"
+                placeholder="Month" />
+            </fieldset>
+
+            <fieldset class="form-group">
+              <input class="form-control"
+                formControlName="num"
+                type="number"
+                placeholder="Num" />
+            </fieldset>
+
+            <fieldset class="form-group">
+              <input class="form-control"
+                formControlName="link"
+                type="text"
+                placeholder="Link" />
+            </fieldset>
+
+            <fieldset class="form-group">
+              <input class="form-control"
+                formControlName="year"
+                type="text"
+                placeholder="Year" />
+            </fieldset>
+
+            <fieldset class="form-group">
+              <input class="form-control"
+                formControlName="news"
+                type="text"
+                placeholder="News" />
+            </fieldset>
+
+            <fieldset class="form-group">
+              <input class="form-control"
+                formControlName="safe_title"
+                type="text"
+                placeholder="Safe title" />
+            </fieldset>
+
+            <fieldset class="form-group">
+              <input class="form-control"
+                formControlName="transcript"
+                type="text"
+                placeholder="Transcript" />
+            </fieldset>
+
+            <fieldset class="form-group">
+              <input class="form-control"
+                formControlName="alt"
+                type="text"
+                placeholder="Alt" />
+            </fieldset>
+
+            <fieldset class="form-group">
+              <input class="form-control"
+                formControlName="img"
+                type="text"
+                placeholder="Img" />
+            </fieldset>
+
+            <fieldset class="form-group">
+              <input class="form-control"
                 formControlName="title"
                 type="text"
-                placeholder="Article Title" />
+                placeholder="Title" />
             </fieldset>
 
             <fieldset class="form-group">
               <input class="form-control"
-                formControlName="description"
+                formControlName="day"
                 type="text"
-                placeholder="What's this article about?" />
-            </fieldset>
-
-            <fieldset class="form-group">
-              <textarea class="form-control"
-                formControlName="body"
-                rows="8"
-                placeholder="Write your article (in markdown)">
-              </textarea>
-            </fieldset>
-
-            <fieldset class="form-group">
-              <input class="form-control"
-                type="text"
-                placeholder="Enter tags"
-                [formControl]="tagField"
-                (keyup.enter)="addTag()" />
-
-              <div class="tag-list">
-                <span *ngFor="let tag of article.tagList"
-                  class="tag-default tag-pill">
-                  <i class="ion-close-round" (click)="removeTag(tag)"></i>
-                  {{ tag }}
-                </span>
-              </div>
+                placeholder="Day" />
             </fieldset>
 
             <button class="btn btn-lg pull-xs-right btn-primary" type="button" (click)="submitForm()">
-              Publish Article
+              Publish Comic
             </button>
 
           </fieldset>

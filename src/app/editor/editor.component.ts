@@ -52,20 +52,14 @@ export class EditorComponent implements OnInit {
 
   submitForm() {
     this.isSubmitting = true;
-
-    // update the model
     this.updateComic(this.comicForm.value);
-
-    // post the changes
     this.comicsService
     .save(this.comic)
-    .subscribe(
-      comic => this.router.navigateByUrl('/comic/' + comic.num),
-      err => {
-        this.errors = err;
-        this.isSubmitting = false;
+    .then(
+      comic => {
+        this.router.navigateByUrl('/')
       }
-    );
+    )
   }
 
   updateComic(values: Object) {

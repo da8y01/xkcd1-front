@@ -23,7 +23,7 @@ export class ComicsService {
 
     return this.apiService
     .get(
-      '/comic' + ((config.type === 'feed') ? '/feed' : ''),
+      '/comic',
       new HttpParams(params)
     );
   }
@@ -37,16 +37,9 @@ export class ComicsService {
     return this.apiService.delete('/comic/' + num);
   }
 
-  save(comic): Observable<Comic> {
-    // If we're updating an existing article
-    if (comic.num) {
-      return this.apiService.put('/comic/' + comic.num, {comic: comic})
-        .pipe(map(data => data.comic));
-
-    // Otherwise, create a new article
-    } else {
-      return this.apiService.post('/comic/', {comic: comic})
-        .pipe(map(data => data.comic));
-    }
+  save(comic) {
+    return this.apiService.post('/comic/', {comic: comic}).then(data => {
+      return data.comic
+    })
   }
 }

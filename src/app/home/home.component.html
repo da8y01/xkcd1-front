@@ -15,16 +15,9 @@
           <ul class="nav nav-pills outline-active">
             <li class="nav-item">
               <a class="nav-link"
-                 [ngClass]="{'active': listConfig.type === 'feed'}"
-                 (click)="setListTo('feed')">
-                 Your Feed
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link"
                  [ngClass]="{'active': listConfig.type === 'all' && !listConfig.filters.tag}"
                  (click)="setListTo('all')">
-                 Global Feed
+                 Comics list
               </a>
             </li>
             <li class="nav-item" [hidden]="!listConfig.filters.tag">

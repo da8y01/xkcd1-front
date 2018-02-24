@@ -1,17 +1,13 @@
 <div class="article-meta">
-  <a [routerLink]="['/profile', article.author.username]">
-    <img [src]="article.author.image" />
-  </a>
-
-  <div class="info">
-    <a class="author"
-      [routerLink]="['/profile', article.author.username]">
-      {{ article.author.username }}
-    </a>
-    <span class="date">
-      {{ article.createdAt | date: 'longDate' }}
-    </span>
-  </div>
-
-  <ng-content></ng-content>
+  <div>{{comic.month}}</div>
+  <div>{{comic.num}}</div>
+  <div>{{comic.link}}</div>
+  <div>{{comic.year}}</div>
+  <div>{{comic.news}}</div>
+  <div>{{comic.safe_title}}</div>
+  <div>{{comic.transcript}}</div>
+  <div>{{comic.alt}}</div>
+  <div>{{comic.img}}</div>
+  <div>{{comic.title}}</div>
+  <div>{{comic.day}}</div>
 </div>

@@ -3,7 +3,6 @@ import { RouterModule } from '@angular/router';
 
 import { ComicComponent } from './comic.component';
 import { ComicResolver } from './comic-resolver.service';
-import { MarkdownPipe } from './markdown.pipe';
 import { SharedModule } from '../shared';
 
 const comicRouting: ModuleWithProviders = RouterModule.forChild([
@@ -23,7 +22,6 @@ const comicRouting: ModuleWithProviders = RouterModule.forChild([
   ],
   declarations: [
     ComicComponent,
-    MarkdownPipe
   ],
 
   providers: [

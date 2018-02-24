@@ -48,7 +48,7 @@ export class AuthComponent implements OnInit {
 
     const credentials = this.authForm.value;
     this.userService
-    .attemptAuth(this.authType, credentials)
+    .attemptAuth1(this.authType, credentials)
     .subscribe(
       data => this.router.navigateByUrl('/'),
       err => {
@@ -56,5 +56,14 @@ export class AuthComponent implements OnInit {
         this.isSubmitting = false;
       }
     );
+    // this.userService
+    // .attemptAuth(this.authType, credentials)
+    // .then(
+    //   data => console.log('BBBBBBBBBBBBBBB'+data),
+    //   err => {
+    //     this.errors = err;
+    //     this.isSubmitting = false;
+    //   }
+    // );
   }
 }
