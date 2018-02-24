@@ -57,9 +57,9 @@ export class EditorComponent implements OnInit {
     .save(this.comic)
     .then(
       comic => {
-        this.router.navigateByUrl('/')
+        this.router.navigateByUrl('/');
       }
-    )
+    );
   }
 
   updateComic(values: Object) {

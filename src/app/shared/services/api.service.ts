@@ -15,7 +15,7 @@ export class ApiService {
   ) {}
 
   private formatErrors(error: any) {
-    //return new ErrorObservable(error.json());
+    // return new ErrorObservable(error.json());
     return new ErrorObservable({error: 'There was an ErrorObservable.'});
   }
 
@@ -39,7 +39,7 @@ export class ApiService {
     )
     .toPromise()
     .then(response => {
-      return response
+      return response;
     })
     .catch(this.handleError);
   }
@@ -51,7 +51,7 @@ export class ApiService {
   }
 
   private handleError(error: any): Promise<any> {
-    console.error('An error occurred', error)
-    return Promise.reject(error.message || error)
+    console.error('An error occurred', error);
+    return Promise.reject(error.message || error);
   }
 }

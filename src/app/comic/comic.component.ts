@@ -24,13 +24,10 @@ export class ComicComponent implements OnInit {
     private route: ActivatedRoute,
     private comicsService: ComicsService,
     private router: Router,
-    private userService: UserService,
-  ) {
-    console.log('ComicComponent1')    
-  }
+    private userService: UserService
+  ) {}
 
   ngOnInit() {
-    console.log('ComicComponent')
     // Retreive the prefetched article
     this.route.data.subscribe(
       (data: { comic: Comic }) => {
