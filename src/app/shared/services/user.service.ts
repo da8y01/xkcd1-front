@@ -60,10 +60,9 @@ export class UserService {
 
   attemptAuth(type, credentials): Promise<any> {
     const route = (type === 'login') ? '/login' : '';
-    return this.apiService.post('/user' + route, {user: credentials})
-      .then(data => {
-        this.setAuth(data)
-      })
+    return this.apiService.post('/user' + route, {user: credentials}).then(data => {
+      this.setAuth(data);
+    });
   }
 
   getCurrentUser(): User {

@@ -39,7 +39,7 @@ export class ComicsService {
 
   save(comic) {
     return this.apiService.post('/comic/', {comic: comic}).then(data => {
-      return data.comic
-    })
+      return data.comic;
+    });
   }
 }
