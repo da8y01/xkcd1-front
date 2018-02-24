@@ -40,7 +40,7 @@ export class ComicComponent implements OnInit {
       (userData: User) => {
         this.currentUser = userData;
 
-        this.canModify = (this.currentUser.email != (null || undefined));
+        this.canModify = (this.currentUser.email !== null && this.currentUser.email !== undefined);
       }
     );
   }

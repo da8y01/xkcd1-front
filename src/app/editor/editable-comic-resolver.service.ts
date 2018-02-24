@@ -22,7 +22,7 @@ export class EditableComicResolver implements Resolve<Comic> {
       .pipe(
         map(
           comic => {
-            if (this.userService.getCurrentUser().email != (null || undefined)) {
+            if (this.userService.getCurrentUser().email !== null && this.userService.getCurrentUser().email !== undefined) {
               return comic;
             } else {
               this.router.navigateByUrl('/');
