@@ -61,7 +61,7 @@ export class UserService {
   attemptAuth(type, credentials): Promise<any> {
     const route = (type === 'login') ? '/login' : '';
     return this.apiService.post('/user' + route, {user: credentials}).then(data => {
-      this.setAuth(data);
+      this.setAuth(data.user);
     });
   }
 

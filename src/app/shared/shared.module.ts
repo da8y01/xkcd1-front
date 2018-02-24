@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
-import { ComicListComponent, ComicMetaComponent, ComicPreviewComponent } from './comic-helpers';
+import { ComicListComponent, ComicPreviewComponent } from './comic-helpers';
 import { ListErrorsComponent } from './list-errors.component';
 import { ShowAuthedDirective } from './show-authed.directive';
 
@@ -18,14 +18,12 @@ import { ShowAuthedDirective } from './show-authed.directive';
   ],
   declarations: [
     ComicListComponent,
-    ComicMetaComponent,
     ComicPreviewComponent,
     ListErrorsComponent,
     ShowAuthedDirective
   ],
   exports: [
     ComicListComponent,
-    ComicMetaComponent,
     ComicPreviewComponent,
     CommonModule,
     FormsModule,
