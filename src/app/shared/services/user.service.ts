@@ -31,7 +31,7 @@ export class UserService {
     if (this.jwtService.getToken()) {
       this.apiService.get('/user')
       .subscribe(
-        data => this.setAuth(data.user),
+        data => this.setAuth(data),
         err => this.purgeAuth()
       );
     } else {
@@ -60,8 +60,8 @@ export class UserService {
 
   attemptAuth(type, credentials): Promise<any> {
     const route = (type === 'login') ? '/login' : '';
-    return this.apiService.post('/user' + route, {user: credentials}).then(data => {
-      this.setAuth(data.user);
+    return this.apiService.post('/user' + route, credentials).then(data => {
+      this.setAuth(data);
     });
   }
 

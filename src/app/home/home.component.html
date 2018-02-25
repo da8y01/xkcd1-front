@@ -11,23 +11,6 @@
     <div class="row">
 
       <div class="col-md-12">
-        <div class="feed-toggle">
-          <ul class="nav nav-pills outline-active">
-            <li class="nav-item">
-              <a class="nav-link"
-                 [ngClass]="{'active': listConfig.type === 'all' && !listConfig.filters.tag}"
-                 (click)="setListTo('all')">
-                 Comics list
-              </a>
-            </li>
-            <li class="nav-item" [hidden]="!listConfig.filters.tag">
-              <a class="nav-link active">
-                <i class="ion-pound"></i> {{ listConfig.filters.tag }}
-              </a>
-            </li>
-          </ul>
-        </div>
-
         <app-comic-list [limit]="10" [config]="listConfig"></app-comic-list>
       </div>
 
