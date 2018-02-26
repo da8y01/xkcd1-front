@@ -11,7 +11,7 @@ export class EditableComicResolver implements Resolve<Comic> {
     private comicsService: ComicsService,
     private router: Router,
     private userService: UserService
-  ) { }
+  ) {}
 
   resolve(
     route: ActivatedRouteSnapshot,

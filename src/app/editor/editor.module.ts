@@ -12,11 +12,11 @@ const editorRouting: ModuleWithProviders = RouterModule.forChild([
     canActivate: [AuthGuard]
   },
   {
-    path: 'editor/:slug',
+    path: 'editor/:num',
     component: EditorComponent,
     canActivate: [AuthGuard],
     resolve: {
-      article: EditableComicResolver
+      comic: EditableComicResolver
     }
   }
 ]);

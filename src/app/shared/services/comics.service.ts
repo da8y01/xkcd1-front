@@ -30,7 +30,7 @@ export class ComicsService {
 
   get(num): Observable<Comic> {
     return this.apiService.get('/comic/' + num)
-      .pipe(map(data => data.article));
+      .pipe(map(data => data));
   }
 
   destroy(num) {

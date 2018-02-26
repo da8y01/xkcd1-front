@@ -1,17 +1,10 @@
 <div class="home-page">
 
-  <div class="banner" *showAuthed="false">
-    <div class="container">
-      <h1 class="logo-font">XKCD</h1>
-      <p>The web-comics site.</p>
-    </div>
-  </div>
-
   <div class="container page">
     <div class="row">
 
       <div class="col-md-12">
-        <app-comic-list [limit]="10" [config]="listConfig"></app-comic-list>
+        <app-comic-list [config]="listConfig"></app-comic-list>
       </div>
 
     </div>

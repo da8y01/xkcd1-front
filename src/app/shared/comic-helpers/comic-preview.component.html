@@ -1,6 +1,6 @@
 <div class="article-preview">
   <div>{{comic.month}}</div>
-  <div>{{comic.num}}</div>
+  <div><a [routerLink]="['/editor', comic.num]">{{comic.num}}</a></div>
   <div>{{comic.link}}</div>
   <div>{{comic.year}}</div>
   <div>{{comic.news}}</div>
