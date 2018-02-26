@@ -5,5 +5,6 @@
 
 export const environment = {
   production: false,
-  api_url: 'http://localhost:5000'
+  //api_url: 'http://localhost:5000'
+  api_url: 'https://xkcd3-back.herokuapp.com'
 };
